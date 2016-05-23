@@ -1,0 +1,14 @@
+#!/bin/dash
+
+#This script updates symfon2 project (requires s2compile script)
+
+projectDirectory="/var/www/$1/site"  #your symfony2 project's folder
+
+if [ -d "$projectDirectory" ]; then
+	cd  "$projectDirectory/site"
+	sudo git pull origin master
+	sudo s2compile dev #calling s2compile script with dev param
+	sudo s2compile prod
+else
+	echo '--- Prject not fund ---'
+fi

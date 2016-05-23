@@ -1,0 +1,13 @@
+execute pathogen#infect()
+
+syntax on
+set tabstop=4
+set nu
+set expandtab
+set autoindent smartindent cindent  "go for all indenting, all the time
+set incsearch "do incremental searching
+set hlsearch "highlight search results
+set ts=4 sw=4 sts=4 "default to 2 space tabs
+set expandtab "always use spaces not tabs
+autocmd BufWritePre * :%s/\s\+$//e "delete trailing whitespace on save
+
