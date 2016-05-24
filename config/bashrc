@@ -155,11 +155,14 @@ alias s2cc='app/console cache:clear'
 alias s2ai='app/console assets:install'
 alias s2cu='composer update'
 alias s2cg='app/console | grep $1'
+alias s2watch='app/console assetic:watch'
 
 #system
 alias ..='cd ../../'
 alias ...='cd ../../../'
 alias phpr='sudo service php5-fpm restart'
+alias nginxr='sudo services nginx restart'
+alias pf="sudo poweroff"
 
 #vm
 alias stopvm='function stopvm(){ VBoxManage controlvm ${1} poweroff > /dev/null 2>&1 & };stopvm'
