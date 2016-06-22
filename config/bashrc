@@ -146,6 +146,12 @@ function gtp() {
     fi
 }
 
+function genpasswd() {
+    local l=$1
+    [ "$l" == "" ] && l=20
+    tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}
+
 #git
 alias gits='git status'
 alias gitcm='git commit -am $1'
@@ -153,15 +159,18 @@ alias gitcm='git commit -am $1'
 #symfony2
 alias s2cc='app/console cache:clear'
 alias s2ai='app/console assets:install'
-alias s2cu='composer update'
-alias s2cg='app/console | grep $1'
+alias s2ad='app/console assetic:dump'
 alias s2watch='app/console assetic:watch'
+alias s2cg='app/console | grep $1'
+alias s2cu='composer update'
 
 #system
 alias ..='cd ../../'
 alias ...='cd ../../../'
-alias phpr='sudo service php5-fpm restart'
+alias php5r='sudo service php5-fpm restart'
+alias php7r='sudo service php7.0-fpm restart'
 alias nginxr='sudo services nginx restart'
+alias svim="sudo vim $1"
 alias pf="sudo poweroff"
 
 #vm
