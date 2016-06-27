@@ -3,7 +3,7 @@
 #This scripts setup permissions for given directory or file (requires setacl)
 #http://symfony.com/doc/current/book/installation.html
 
-objects=${1:-"app/cache app/logs"} # objects to setup permissions
+dirsVar=${1:-"app/cache app/logs"} # objects to setup permissions
 HTTPDUSER="www-data"
 
 sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX $dirsVar

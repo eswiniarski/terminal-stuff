@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#This script creates typo3 project
+
+wget get.typo3.org/8.1 -O typo3_src-8.1.2.tar.gz
+tar xfz typo3_src-8.1.2.tar.gz
+rm typo3_src-8.1.2.tar.gz
+mkdir web
+cd web
+ln -s ../typo3_src-8.1.2 typo3_src
+ln -s typo3_src/index.php index.php
+ln -s typo3_src/typo3 typo3
+cd ..
+touch web/FIRST_INSTALL
+sudo chown -R $USER:www-data .

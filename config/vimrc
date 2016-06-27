@@ -9,4 +9,3 @@ set hlsearch "highlight search results
 set ts=4 sw=4 sts=4 "default to 2 space tabs
 set expandtab "always use spaces not tabs
 autocmd BufWritePre * :%s/\s\+$//e "delete trailing whitespace on save
-
