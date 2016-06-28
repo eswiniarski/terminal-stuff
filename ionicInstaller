@@ -23,16 +23,16 @@ GRADLE_PATH=/opt/gradle
 # x86_64 or i686
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
 
-# Latest Android Linux SDK for x64 and x86 as of 12-19-2015
+# Latest Android Linux SDK for x64 and x86 as of 06-28-2016
 ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 
-# Latest NodeJS for x64 and x86 as of 12-19-2015
-NODE_X64="https://nodejs.org/download/release/v0.12.9/node-v0.12.9-linux-x64.tar.gz"
-NODE_X86="https://nodejs.org/download/release/v0.12.9/node-v0.12.9-linux-x86.tar.gz"
+# Latest NodeJS for x64 and x86 as of 06-28-2016
+NODE_X64="https://nodejs.org/dist/v4.4.6/node-v4.4.6-linux-x64.tar.xz"
+NODE_X86="https://nodejs.org/dist/v4.4.6/node-v4.4.6-linux-x86.tar.xz"
 
-# Latest Gradle as of 12-19-2015
-GRADLE_ALL="https://services.gradle.org/distributions/gradle-2.9-all.zip"
+# Latest Gradle as of 06-28-2016
+GRADLE_ALL="https://services.gradle.org/distributions/gradle-2.14-all.zip"
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
     # Add i386 architecture
