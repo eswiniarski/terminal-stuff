@@ -18,3 +18,12 @@ Sets [symfony 2 permissions](http://symfony.com/doc/current/book/installation.ht
 
 ### s2updateproject ###
 Pulls git master branch and runs s2compile for dev and prod enviroiment. 
+
+
+### typo3installer ###
+Creates typo3 project in current directory
+
+### mysqlManager ###
+Simplifies MySQL administration
+
+- Creating new user
