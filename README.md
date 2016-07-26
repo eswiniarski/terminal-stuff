@@ -34,7 +34,6 @@ Simplifies MySQL administration
    ```
    mysqlManager dropuser user_name l
    ```
-   
 - Add privilages to new user
    ```
    mysqlManager grantuser user_name db_name r
