@@ -6,5 +6,6 @@ ln -sf $PWD/s2compile /usr/bin/s2compile
 ln -sf $PWD/s2permissions /usr/bin/s2permissions
 ln -sf $PWD/s2updateproject /usr/bin/s2updateproject
 ln -sf $PWD/typo3installer /usr/bin/typo3installer
+ln -sf $PWD/mysqlManager /user/bin/mysqlManager
 
 . ~/.bashrc
