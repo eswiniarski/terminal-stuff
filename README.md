@@ -50,6 +50,13 @@ Simplifies MySQL administration
    ```
    mysqlManager dropdb db_name
    ```
-
+- Import databse
+   ```
+   mysqlManager importdb db_name path_to_sql_file
+   ```
+- Export database
+   ```
+   mysqlManager exportdb db_name path_to_sql_file
+   ```
 
 
