@@ -76,6 +76,18 @@ elif [ "$task" = "dropdb" ]
 then
     dbname=$2
     mysql -u root -p -e "DROP DATABASE ${dbname};"
+
+elif [ "$task" = "exportdb" ]
+then
+    dbname=$2
+    pathToFile=$3
+    mysqldump -u root -p ${dbname} > ${pathToFile}
+
+elif [ "$task" = "importdb" ]
+then
+    dbname=$2
+    pathToFile=$3
+    mysql -u root -p ${dbname} < ${pathToFile}
 else
 	echo 'No option specyfied'
 fi
