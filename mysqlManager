@@ -6,66 +6,35 @@ if [ "$task" = "createuser" ]
 then
     username=$2
     userType=$3 #l - local / r - remote
+    [ $userType = "r" ] && userType="%" || userType="localhost"
 
-    if [ "$userType" = "l" ]
-    then
-        mysql -u root -p -e "CREATE USER '${username}'@'localhost' IDENTIFIED BY '${username}123';"
-
-    elif [ "$userType" = "r" ]
-    then
-        mysql -u root -p -e "CREATE USER '${username}'@'%' IDENTIFIED BY '${username}123';"
-    else
-        echo 'Bad parameters'
-    fi
+    mysql -u root -p -e "CREATE USER '${username}'@'${userType}' IDENTIFIED BY '${username}123';"
 
 elif [ "$task" = "dropuser" ]
 then
     username=$2
     userType=$3
+    [ $userType = "r" ] && userType="%" || userType="localhost"
 
-    if [ "$userType" = "l" ]
-    then
-        mysql -u root -p -e "DROP USER '${username}'localhost'%';"
-
-    elif [ "$userType" = "r" ]
-    then
-        mysql -u root -p -e "DROP USER '${username}'@'%';"
-    else
-        echo 'Bad parameters'
-    fi
+    mysql -u root -p -e "DROP USER '${username}'@'${userType}';"
 
 elif [ "$task" = "grantuser" ]
 then
     username=$2;
     db=$3
     userType=$4
+    [ $userType = "r" ] && userType="%" || userType="localhost"
 
-    if [ "$userType" = "l" ]
-    then
-        mysql -u root -p -e "GRANT ALL ON ${db}.* TO '${username}'@'localhost';"
-
-    elif [ "$userType" = "r" ]
-    then
-        mysql -u root -p -e "GRANT ALL ON ${db}.* TO '${username}'@'%';"
-    else
-        echo 'Bad parameters'
-    fi
+    mysql -u root -p -e "GRANT ALL ON ${db}.* TO '${username}'@'${userType}';"
 
 elif [ "$task" = "revokeuser" ]
 then
     username=$2;
     db=$3
     userType=$4
+    [ $userType = "r" ] && userType="%" || userType="localhost"
 
-    if [ "$userType" = "l" ]
-    then
-        mysql -u root -p -e "REVOKE ALL PRIVILEGES ON ${db}.* FROM '${username}'@'localhost';"
-    elif [ "$userType" = "r" ]
-    then
-        mysql -u root -p -e "REVOKE ALL PRIVILEGES ON ${db}.* FROM '${username}'@'%';"
-    else
-        echo 'Bad parameters'
-    fi
+    mysql -u root -p -e "REVOKE ALL PRIVILEGES ON ${db}.* FROM '${username}'@'{$userType}';"
 
 elif [ "$task" = "createdb" ]
 then
