@@ -1,0 +1,13 @@
+#!/bin/bash
+
+projectName=$1
+bundleName=$2
+
+path=${projectName}/site
+
+mkdir $projectName
+cd $projectName
+symfony new site lts
+cd site
+app/console generate:bundle --namespace=${bundleName} --no-interaction
+#app/console generate:bundle --namespace=MM/AuthBundle --no-interaction
