@@ -117,6 +117,22 @@ fi
 #CUSTOM STUFF
 ###################################
 
+# contains(string, substring)
+#
+# Returns 0 if the specified string contains the specified substring,
+# otherwise returns 1.
+contains() {
+    string="$1"
+    substring="$2"
+
+    if test "${string#*$substring}" != "$string"
+    then
+        return 0    # $substring is in $string
+    else
+        return 1    # $substring is not in $string
+    fi
+}
+
 function gtp() {
     projectType=$1 #project type wp/s2
     projectName=$2 #name of directory in /var/www
@@ -176,4 +192,12 @@ alias pf="sudo poweroff"
 #vm
 alias stopvm='function stopvm(){ VBoxManage controlvm ${1} poweroff > /dev/null 2>&1 & };stopvm'
 alias startvm='function startvm(){ nohup VBoxHeadless -s ${1} > /dev/null 2>&1 & };startvm'
-alias vm-cmd='ssh 192.168.57.2'
+
+function vm-cmd() {
+    if contains "$PWD" "/emil/shared"
+    then
+        ssh -t 192.168.57.2 "cd $PWD; bash"
+    else
+        ssh 192.168.57.2
+    fi
+}
