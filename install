@@ -7,5 +7,8 @@ ln -sf $PWD/s2permissions /usr/bin/s2permissions
 ln -sf $PWD/s2updateproject /usr/bin/s2updateproject
 ln -sf $PWD/typo3installer /usr/bin/typo3installer
 ln -sf $PWD/mysqlManager /user/bin/mysqlManager
+ln -sf $PWD/interpreters/go.sh /usr/local/bin/go
+ln -sf $PWD/interpreters/php.sh /usr/local/bin/php
+ln -sf $PWD/interpreters/py.sh /usr/local/bin/python
 
 . ~/.bashrc
