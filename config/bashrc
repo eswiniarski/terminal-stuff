@@ -201,3 +201,7 @@ function vm-cmd() {
         ssh 192.168.57.2
     fi
 }
+
+#go
+export PATH=$PATH:/usr/local/go/bin
+alias gp='export GOPATH=${PWD%/src/*}; export PATH=$PATH:$GOPATH/bin'
