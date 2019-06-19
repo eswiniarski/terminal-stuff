@@ -205,3 +205,7 @@ function vm-cmd() {
 #go
 export PATH=$PATH:/usr/local/go/bin
 alias gp='export GOPATH=${PWD%/src/*}; export PATH=$PATH:$GOPATH/bin'
+alias create-go-project-dir='mkdir $1'
+
+#docker
+alias docker-hast-ip="ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'"
