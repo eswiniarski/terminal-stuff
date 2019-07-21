@@ -168,6 +168,13 @@ function genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
+function clearsys() {
+    sudo apt-get autoclean
+    sudo apt-get autoremove
+    sudo apt-get clean
+    rm -rf ~/.cache/thumbnails
+}
+
 #git
 alias gits='git status'
 alias gitcm='git commit -am $1'
@@ -204,6 +211,7 @@ function vm-cmd() {
 
 #go
 export PATH=$PATH:/usr/local/go/bin
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig/:/usr/lib/x86_64-linux-gnu/pkgconfig/
 alias gp='export GOPATH=${PWD%/src/*}; export PATH=$PATH:$GOPATH/bin'
 alias create-go-project-dir='mkdir $1'
 
