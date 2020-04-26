@@ -11,5 +11,6 @@ ln -sf $PWD/interpreters/go.sh /usr/local/bin/go
 ln -sf $PWD/interpreters/php.sh /usr/local/bin/php
 ln -sf $PWD/interpreters/py.sh /usr/local/bin/python
 ln -sf $PWD/swagger.sh /usr/bin/swagger
+ln -sf $PWD/youtube-dl.sh /usr/bin/youtube-dl
 
 . ~/.bashrc

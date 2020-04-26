@@ -219,3 +219,6 @@ export PATH=$PATH:/usr/bin/swagger
 
 #docker
 alias docker-hast-ip="ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'"
+
+#tools
+alias youtube-dl-mp3="youtube-dl --extract-audio --audio-format mp3"
