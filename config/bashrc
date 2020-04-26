@@ -214,6 +214,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig/:/usr/lib/x86_64-linux-gnu/pkgconfig/
 alias gp='export GOPATH=${PWD%/src/*}; export PATH=$PATH:$GOPATH/bin'
 alias create-go-project-dir='mkdir $1'
+export GO111MODULE=on
+export PATH=$PATH:/usr/bin/swagger
 
 #docker
 alias docker-hast-ip="ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'"
