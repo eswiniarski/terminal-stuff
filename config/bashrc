@@ -190,13 +190,10 @@ alias s2cu='composer update'
 #system
 alias ..='cd ../../'
 alias ...='cd ../../../'
-alias php5r='sudo service php5-fpm restart'
-alias php7r='sudo service php7.0-fpm restart'
-alias nginxr='sudo services nginx restart'
 alias svim="sudo vim $1"
 alias pf="sudo poweroff"
 
-#vm
+#virtualBox
 alias stopvm='function stopvm(){ VBoxManage controlvm ${1} poweroff > /dev/null 2>&1 & };stopvm'
 alias startvm='function startvm(){ nohup VBoxHeadless -s ${1} > /dev/null 2>&1 & };startvm'
 
@@ -218,7 +215,9 @@ export GO111MODULE=on
 export PATH=$PATH:/usr/bin/swagger
 
 #docker
-alias docker-hast-ip="ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'"
+alias ds="docker ps"
+alias docker-host-ip="ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'"
+alias docker-images="docker images --format '{{.Size}}\t{{.ID}}\t{{.Repository}}:{{.Tag}}' | sort -rh"
 
 #tools
 alias youtube-dl-mp3="youtube-dl --extract-audio --audio-format mp3"
